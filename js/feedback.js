@@ -25,6 +25,12 @@ form.addEventListener("submit", function (event) {
     if (email.value.trim() === "") {
         emailError.textContent = "Please enter your email.";
     }
+    else if (!email.value.includes("@")) {
+        emailError.textContent = "Email must include @.";
+    }
+    else if (!email.value.includes(".")) {
+        emailError.textContent = "Email must include a domain.";
+    }
     else {
         emailError.textContent = "";
     }
