@@ -8,6 +8,9 @@ const emailError = document.querySelector("#email-error");
 const topic = document.querySelector("#topic");
 const topicError = document.querySelector("#topic-error");
 
+const comments = document.querySelector("#comments");
+const commentsError = document.querySelector("#comments-error");
+
 form.addEventListener("submit", function (event) {
 
     event.preventDefault();
@@ -46,6 +49,18 @@ form.addEventListener("submit", function (event) {
     }
     else {
         topicError.textContent = "";
+    }
+
+    // Comments validation
+
+    if (comments.value.trim() === "") {
+        commentsError.textContent = "Please enter your comments.";
+    }
+    else if (comments.value.trim().length < 15) {
+        commentsError.textContent = "Comments must be at least 15 characters.";
+    }
+    else {
+        commentsError.textContent = "";
     }
 
 });
