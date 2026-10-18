@@ -1,10 +1,14 @@
 const form = document.querySelector("#feedback-form");
 const fullName = document.querySelector("#full-name");
 const fullNameError = document.querySelector("#full-name-error");
+const email = document.querySelector("#email");
+const emailError = document.querySelector("#email-error");
 
 form.addEventListener("submit", function (event) {
 
     event.preventDefault();
+
+    //Fullname validation
 
     if (fullName.value.trim() === "") {
         fullNameError.textContent = "Please enter your full name.";
@@ -14,6 +18,15 @@ form.addEventListener("submit", function (event) {
     }
     else {
         fullNameError.textContent = "";
+    }
+
+    // Email validation
+
+    if (email.value.trim() === "") {
+        emailError.textContent = "Please enter your email.";
+    }
+    else {
+        emailError.textContent = "";
     }
 
 });
