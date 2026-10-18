@@ -9,5 +9,11 @@ form.addEventListener("submit", function (event) {
     if (fullName.value.trim() === "") {
         fullNameError.textContent = "Please enter your full name.";
     }
+    else if (fullName.value.trim().length < 2) {
+        fullNameError.textContent = "Name must be at least 2 characters.";
+    }
+    else {
+        fullNameError.textContent = "";
+    }
 
 });
