@@ -71,9 +71,15 @@ comments.addEventListener("input", function () {
    if (comments.value.length < 15) {
         characterCounter.textContent =
             comments.value.length + " characters - minimum 15 required";
+
+        characterCounter.classList.add("counter-error");
+        characterCounter.classList.remove("counter-valid");
     }
     else {
         characterCounter.textContent =
             comments.value.length + " characters - minimum met";
+
+        characterCounter.classList.add("counter-valid");
+        characterCounter.classList.remove("counter-error");
     }
 });
