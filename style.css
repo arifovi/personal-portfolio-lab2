@@ -1,0 +1,653 @@
+/* =========================================
+   Syed Arif Rahman - Personal Portfolio
+   Initial CSS Styling
+   ========================================= */
+
+
+/* ---------- General Page Styling ---------- */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f7fa;
+    color: #333333;
+    line-height: 1.6;
+}
+
+
+/* ---------- Header ---------- */
+
+header {
+    background-color: #1f3c5b;
+    color: white;
+    text-align: center;
+    padding: 40px 20px 25px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header p {
+    margin: 8px 0 20px;
+    font-size: 1.1rem;
+}
+
+
+/* ---------- Navigation ---------- */
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: #ffffff;
+    color: #1f3c5b;
+}
+
+nav a:focus {
+    outline: 3px solid #f4c95d;
+    outline-offset: 3px;
+}
+
+
+/* ---------- Main Content ---------- */
+
+main {
+    width: 85%;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+section {
+    background-color: white;
+    margin-bottom: 25px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+section h2 {
+    color: #1f3c5b;
+    margin-top: 0;
+    border-bottom: 2px solid #dce5ee;
+    padding-bottom: 8px;
+}
+
+section h3 {
+    color: #345d7e;
+}
+
+
+/* ---------- Paragraphs and Lists ---------- */
+
+p {
+    margin-bottom: 15px;
+}
+
+ul,
+ol {
+    padding-left: 25px;
+}
+
+li {
+    margin-bottom: 6px;
+}
+
+
+/* ---------- Links Inside Main Content ---------- */
+
+main a {
+    color: #245f91;
+    font-weight: bold;
+}
+
+main a:hover {
+    color: #163d5c;
+}
+
+main a:focus {
+    outline: 3px solid #f4c95d;
+    outline-offset: 3px;
+}
+
+
+/* ---------- Images ---------- */
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+
+
+/* ---------- Table ---------- */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    border: 1px solid #cccccc;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #1f3c5b;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f5f7;
+}
+
+
+/* ---------- Contact Form ---------- */
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #1f3c5b;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #b8c2cc;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
+
+textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+    outline: 3px solid #f4c95d;
+    border-color: #1f3c5b;
+}
+
+
+/* ---------- Button ---------- */
+
+button {
+    margin-top: 18px;
+    padding: 12px 22px;
+    background-color: #1f3c5b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #345d7e;
+}
+
+button:focus {
+    outline: 3px solid #f4c95d;
+    outline-offset: 3px;
+}
+
+
+/* ---------- Footer ---------- */
+
+footer {
+    background-color: #172b3f;
+    color: white;
+    text-align: center;
+    padding: 25px 20px;
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 6px 0;
+}
+
+footer a {
+    color: white;
+    margin: 0 8px;
+}
+
+footer a:hover {
+    color: #f4c95d;
+}
+
+footer a:focus {
+    outline: 3px solid #f4c95d;
+    outline-offset: 3px;
+}
+
+/* =========================================
+   Step 7 - Original Images and Seed
+   Text and Image Layout
+   ========================================= */
+
+.content-row {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.content-text {
+    flex: 1;
+}
+
+.content-image {
+    flex: 0 0 38%;
+    margin: 0;
+}
+
+.content-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid #dce5ee;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+}
+
+.content-image figcaption {
+    margin-top: 10px;
+    color: #666666;
+    font-size: 0.9rem;
+    text-align: center;
+    line-height: 1.4;
+}
+
+
+/* ---------- Alternating Project Layout ---------- */
+
+.reverse-row {
+    flex-direction: row-reverse;
+}
+
+
+/* ---------- Personal Photograph ---------- */
+
+#about .content-image {
+    flex-basis: 32%;
+}
+
+#about .content-image img {
+    max-height: 420px;
+    object-fit: cover;
+}
+
+
+/* ---------- Project Image ---------- */
+
+.project-image {
+    flex-basis: 46%;
+}
+
+.project-image img {
+    object-fit: contain;
+    background-color: #f7f9fb;
+}
+
+
+/* =========================================
+   Gentle Focus Seed
+   ========================================= */
+
+.focus-section {
+    border-top: 5px solid #345d7e;
+}
+
+.seed-label {
+    margin-bottom: 5px;
+    color: #667788;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.focus-section h2 {
+    margin-top: 0;
+}
+
+blockquote {
+    margin: 20px 0;
+    padding: 18px 22px;
+
+    background-color: #eef4f8;
+    border-left: 5px solid #345d7e;
+    border-radius: 6px;
+
+    color: #1f3c5b;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.workspace-image {
+    flex-basis: 45%;
+}
+
+/* =========================================
+   Step 8 - Final Testing and Refinements
+   ========================================= */
+
+
+/* ---------- Privacy and Terms Readability Fix ---------- */
+
+footer section {
+    background-color: #ffffff;
+    color: #333333;
+    max-width: 1000px;
+    margin: 25px auto;
+    padding: 25px 30px;
+    text-align: left;
+    border-radius: 10px;
+    box-shadow: none;
+}
+
+footer section h3 {
+    color: #1f3c5b;
+    text-align: center;
+    margin-top: 0;
+}
+
+footer section p {
+    color: #333333;
+    line-height: 1.6;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+/* ---------- Assigned Seed Highlight ---------- */
+
+.seed-highlight {
+    color: #1f3c5b;
+    font-weight: 700;
+    background-color: #eef4f8;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* ---------- Privacy and Terms Layout ---------- */
+
+.footer-info {
+    display: flex;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 25px auto;
+}
+
+.footer-info section {
+    flex: 1;
+    margin: 0;
+    padding: 25px;
+    background-color: #ffffff;
+    color: #333333;
+    border-radius: 10px;
+}
+
+.footer-info section h3 {
+    color: #1f3c5b;
+    margin-top: 0;
+    text-align: center;
+}
+
+.footer-info section p {
+    color: #333333;
+    line-height: 1.6;
+}
+
+/* ---------- ai article ---------- */
+
+.ai-video-image img {
+    cursor: pointer;
+}
+
+.ai-video-image a:focus img {
+    outline: 3px solid #345d7e;
+    outline-offset: 4px;
+}
+
+
+/* ---------- Final Section Heading Detail ---------- */
+
+section h2::after {
+    content: "";
+    display: block;
+    width: 55px;
+    height: 3px;
+    margin-top: 8px;
+    background-color: #345d7e;
+    border-radius: 3px;
+}
+
+
+/* ---------- Image Interaction ---------- */
+
+.content-image img {
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.content-image img:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 7px 16px rgba(0, 0, 0, 0.16);
+}
+
+
+/* ---------- Button Interaction ---------- */
+
+button {
+    transition: background-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+
+
+/* =========================================
+   Responsive Design
+   For Tablets and Mobile Devices
+   ========================================= */
+
+@media screen and (max-width: 768px) {
+
+    /* ---------- Header ---------- */
+
+    header {
+        padding: 30px 15px 20px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+
+    /* ---------- Navigation ---------- */
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    nav a {
+        display: block;
+        width: 100%;
+        padding: 8px 15px;
+    }
+
+
+    /* ---------- Main Content ---------- */
+
+    main {
+        width: 92%;
+        margin: 20px auto;
+    }
+
+    section {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+
+
+    /* ---------- Articles ---------- */
+
+    article {
+        padding: 15px;
+    }
+
+
+    /* ---------- Table ---------- */
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    th,
+    td {
+        padding: 10px;
+    }
+
+
+    /* ---------- Contact Form ---------- */
+
+    input,
+    textarea {
+        font-size: 16px;
+    }
+
+    button {
+        width: 100%;
+    }
+
+
+    /* ---------- Footer ---------- */
+
+    footer {
+        padding: 20px 15px;
+    }
+
+    footer a {
+        display: inline-block;
+        margin: 5px;
+    }
+
+    /* Step 7 - Responsive text and image layout */
+
+    .content-row,
+    .reverse-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .content-image,
+    #about .content-image,
+    .project-image,
+    .workspace-image {
+        flex-basis: auto;
+        width: 100%;
+    }
+
+    #about .content-image img {
+        max-height: none;
+    }
+
+    .content-image {
+        margin-top: 10px;
+    }
+
+    blockquote {
+        font-size: 1.25rem;
+    }
+
+    .footer-info {
+        flex-direction: column;
+    }
+
+    .footer-info section {
+        width: 100%;
+    }
+}
+
+
+/* ---------- Extra Small Mobile Screens ---------- */
+
+@media screen and (max-width: 480px) {
+
+    header h1 {
+        font-size: 1.7rem;
+    }
+
+    header p {
+        font-size: 0.95rem;
+    }
+
+    main {
+        width: 94%;
+    }
+
+    section {
+        padding: 16px;
+    }
+
+    section h2 {
+        font-size: 1.35rem;
+    }
+
+    body {
+        font-size: 0.95rem;
+    }
+}
