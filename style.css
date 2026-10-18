@@ -185,6 +185,7 @@ label {
 }
 
 input,
+select,
 textarea {
     width: 100%;
     padding: 12px;
@@ -200,6 +201,7 @@ textarea {
 }
 
 input:focus,
+select:focus,
 textarea:focus {
     outline: 3px solid #f4c95d;
     border-color: #1f3c5b;
