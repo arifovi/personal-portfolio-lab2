@@ -1,8 +1,12 @@
 const form = document.querySelector("#feedback-form");
 const fullName = document.querySelector("#full-name");
 const fullNameError = document.querySelector("#full-name-error");
+
 const email = document.querySelector("#email");
 const emailError = document.querySelector("#email-error");
+
+const topic = document.querySelector("#topic");
+const topicError = document.querySelector("#topic-error");
 
 form.addEventListener("submit", function (event) {
 
@@ -33,6 +37,15 @@ form.addEventListener("submit", function (event) {
     }
     else {
         emailError.textContent = "";
+    }
+
+    // Topic validation
+
+    if (topic.value === "") {
+        topicError.textContent = "Please choose a topic.";
+    }
+    else {
+        topicError.textContent = "";
     }
 
 });
