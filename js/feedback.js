@@ -10,6 +10,7 @@ const topicError = document.querySelector("#topic-error");
 
 const comments = document.querySelector("#comments");
 const commentsError = document.querySelector("#comments-error");
+const characterCounter = document.querySelector("#character-counter");
 
 form.addEventListener("submit", function (event) {
 
@@ -62,5 +63,11 @@ form.addEventListener("submit", function (event) {
     else {
         commentsError.textContent = "";
     }
+
+});
+
+comments.addEventListener("input", function () {
+
+    characterCounter.textContent = comments.value.length + " characters";
 
 });
