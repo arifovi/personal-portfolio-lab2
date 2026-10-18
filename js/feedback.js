@@ -68,6 +68,12 @@ form.addEventListener("submit", function (event) {
 
 comments.addEventListener("input", function () {
 
-    characterCounter.textContent = comments.value.length + " characters";
-
+   if (comments.value.length < 15) {
+        characterCounter.textContent =
+            comments.value.length + " characters - minimum 15 required";
+    }
+    else {
+        characterCounter.textContent =
+            comments.value.length + " characters - minimum met";
+    }
 });
