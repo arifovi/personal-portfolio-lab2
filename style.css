@@ -497,6 +497,14 @@ button:hover {
     color: green;
 } 
 
+.input-error {
+    border: 2px solid red;
+}
+
+.input-valid {
+    border: 2px solid green;
+}
+
 /* =========================================
    Responsive Design
    For Tablets and Mobile Devices
