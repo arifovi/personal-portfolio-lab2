@@ -12,6 +12,9 @@ const comments = document.querySelector("#comments");
 const commentsError = document.querySelector("#comments-error");
 const characterCounter = document.querySelector("#character-counter");
 
+const website = document.querySelector("#website");
+const websiteError = document.querySelector("#website-error");
+
 form.addEventListener("submit", function (event) {
 
     event.preventDefault();
@@ -62,6 +65,18 @@ form.addEventListener("submit", function (event) {
     }
     else {
         commentsError.textContent = "";
+    }
+
+    // Website validation
+
+    if (website.value.trim() === "") {
+        websiteError.textContent = "";
+    }
+    else if (!website.validity.valid) {
+        websiteError.textContent = "Please enter a valid website URL.";
+    }
+    else {
+        websiteError.textContent = "";
     }
 
 });
