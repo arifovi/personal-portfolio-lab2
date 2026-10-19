@@ -15,6 +15,8 @@ const characterCounter = document.querySelector("#character-counter");
 const website = document.querySelector("#website");
 const websiteError = document.querySelector("#website-error");
 
+const clearButton = document.querySelector("#clear-button");
+
 form.addEventListener("submit", function (event) {
 
     event.preventDefault();
@@ -142,4 +144,37 @@ comments.addEventListener("input", function () {
         characterCounter.classList.add("counter-valid");
         characterCounter.classList.remove("counter-error");
     }
+});
+
+clearButton.addEventListener("click", function () {
+
+    form.reset();
+
+    fullNameError.textContent = "";
+    emailError.textContent = "";
+    topicError.textContent = "";
+    commentsError.textContent = "";
+    websiteError.textContent = "";
+
+    fullName.classList.remove("input-error");
+    fullName.classList.remove("input-valid");
+
+    email.classList.remove("input-error");
+    email.classList.remove("input-valid");
+
+    topic.classList.remove("input-error");
+    topic.classList.remove("input-valid");
+
+    comments.classList.remove("input-error");
+    comments.classList.remove("input-valid");
+
+    website.classList.remove("input-error");
+    website.classList.remove("input-valid");
+
+    characterCounter.textContent =
+        "0 characters - minimum 15 required";
+
+    characterCounter.classList.remove("counter-valid");
+    characterCounter.classList.add("counter-error");
+
 });
