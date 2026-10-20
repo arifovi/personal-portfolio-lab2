@@ -17,9 +17,15 @@ const websiteError = document.querySelector("#website-error");
 
 const clearButton = document.querySelector("#clear-button");
 
+const successMessage = document.querySelector("#success-message");
+
 form.addEventListener("submit", function (event) {
 
     event.preventDefault();
+
+    let formIsValid = true;
+
+     successMessage.textContent = "";
 
     //Fullname validation
 
@@ -28,12 +34,16 @@ form.addEventListener("submit", function (event) {
         
         fullName.classList.add("input-error");
         fullName.classList.remove("input-valid");
+
+        formIsValid = false;
     }
     else if (fullName.value.trim().length < 2) {
         fullNameError.textContent = "Name must be at least 2 characters.";
         
         fullName.classList.add("input-error");
         fullName.classList.remove("input-valid");
+
+        formIsValid = false;
     }
     else {
         fullNameError.textContent = "";
@@ -49,18 +59,24 @@ form.addEventListener("submit", function (event) {
 
         email.classList.add("input-error");
         email.classList.remove("input-valid");
+
+        formIsValid = false;
     }
     else if (!email.value.includes("@")) {
         emailError.textContent = "Email must include @.";
 
         email.classList.add("input-error");
         email.classList.remove("input-valid");
+
+        formIsValid = false;
     }
     else if (!email.value.includes(".")) {
         emailError.textContent = "Email must include a domain.";
 
         email.classList.add("input-error");
         email.classList.remove("input-valid");
+
+        formIsValid = false;
     }
     else {
         emailError.textContent = "";
@@ -76,6 +92,8 @@ form.addEventListener("submit", function (event) {
 
         topic.classList.add("input-error");
         topic.classList.remove("input-valid");
+
+        formIsValid = false;
     }
     else {
         topicError.textContent = "";
@@ -91,12 +109,16 @@ form.addEventListener("submit", function (event) {
         
         comments.classList.add("input-error");
         comments.classList.remove("input-valid");
+
+        formIsValid = false;
     }
     else if (comments.value.trim().length < 15) {
         commentsError.textContent = "Comments must be at least 15 characters.";
         
         comments.classList.add("input-error");
         comments.classList.remove("input-valid");
+
+        formIsValid = false;
     }
     else {
         commentsError.textContent = "";
@@ -118,12 +140,19 @@ form.addEventListener("submit", function (event) {
         
         website.classList.add("input-error");
         website.classList.remove("input-valid");
+
+        formIsValid = false;
     }
     else {
         websiteError.textContent = "";
 
         website.classList.add("input-valid");
         website.classList.remove("input-error");
+    }
+
+    if (formIsValid === true) {
+        successMessage.textContent =
+        "Thanks for your feedback, " + fullName.value.trim() + "!";
     }
 
 });
