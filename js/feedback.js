@@ -62,16 +62,8 @@ form.addEventListener("submit", function (event) {
 
         formIsValid = false;
     }
-    else if (!email.value.includes("@")) {
-        emailError.textContent = "Email must include @.";
-
-        email.classList.add("input-error");
-        email.classList.remove("input-valid");
-
-        formIsValid = false;
-    }
-    else if (!email.value.includes(".")) {
-        emailError.textContent = "Email must include a domain.";
+    else if (!email.validity.valid) {
+        emailError.textContent = "Please enter a valid email address.";
 
         email.classList.add("input-error");
         email.classList.remove("input-valid");
