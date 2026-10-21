@@ -25,7 +25,7 @@ form.addEventListener("submit", function (event) {
 
     let formIsValid = true;
 
-     successMessage.textContent = "";
+    successMessage.textContent = "";
 
     //Fullname validation
 
@@ -153,6 +153,20 @@ form.addEventListener("submit", function (event) {
     if (formIsValid === true) {
         successMessage.textContent =
         "Thanks for your feedback, " + fullName.value.trim() + "!";
+        
+        form.reset();
+
+        fullName.classList.remove("input-valid");
+        email.classList.remove("input-valid");
+        topic.classList.remove("input-valid");
+        comments.classList.remove("input-valid");
+        website.classList.remove("input-valid");
+
+        characterCounter.textContent =
+            "0 characters - minimum 15 required";
+
+        characterCounter.classList.remove("counter-valid");
+        characterCounter.classList.add("counter-error");
     }
 
 });
@@ -184,6 +198,7 @@ clearButton.addEventListener("click", function () {
     topicError.textContent = "";
     commentsError.textContent = "";
     websiteError.textContent = "";
+    successMessage.textContent = "";
 
     fullName.classList.remove("input-error");
     fullName.classList.remove("input-valid");
