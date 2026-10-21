@@ -154,6 +154,10 @@ form.addEventListener("submit", function (event) {
         successMessage.textContent =
         "Thanks for your feedback, " + fullName.value.trim() + "!";
         
+        setTimeout(function () {
+            successMessage.textContent = "";
+        }, 4000);
+        
         form.reset();
 
         fullName.classList.remove("input-valid");
