@@ -270,3 +270,43 @@ clearButton.addEventListener("click", function () {
     characterCounter.classList.add("counter-error");
 
 });
+
+
+/* Validate fields when the user corrects an error */
+
+fullName.addEventListener("input", function () {
+
+    if (fullName.classList.contains("input-error") ||
+        fullName.classList.contains("input-valid")) {
+        validateFullName();
+    }
+
+});
+
+email.addEventListener("input", function () {
+    if (email.classList.contains("input-error") ||
+        email.classList.contains("input-valid")) {
+        validateEmail();
+    }
+});
+
+topic.addEventListener("change", function () {
+    if (topic.classList.contains("input-error") ||
+        topic.classList.contains("input-valid")) {
+        validateTopic();
+    }
+});
+
+comments.addEventListener("input", function () {
+    if (comments.classList.contains("input-error") ||
+        comments.classList.contains("input-valid")) {
+        validateComments();
+    }
+});
+
+website.addEventListener("input", function () {
+    if (website.classList.contains("input-error") ||
+        website.classList.contains("input-valid")) {
+        validateWebsite();
+    }
+});
