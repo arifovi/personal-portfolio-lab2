@@ -193,6 +193,7 @@ textarea {
     border-radius: 5px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1rem;
+    transition: border-color 0.2s ease;
 }
 
 textarea {
@@ -487,7 +488,7 @@ button:hover {
     transform: translateY(-2px);
 }
 
-/* js use */
+/* ---------- Feedback Form Validation ---------- */
 
 .counter-error {
     color: red;
@@ -503,6 +504,24 @@ button:hover {
 
 .input-valid {
     border: 2px solid green;
+}
+
+/* Error messages below form fields */
+#full-name-error,
+#email-error,
+#topic-error,
+#comments-error,
+#website-error {
+    color: #b00020;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* Success message after submitting the form */
+#success-message {
+    color: green;
+    font-weight: bold;
+    margin-top: 15px;
 }
 
 /* =========================================
@@ -583,6 +602,7 @@ button:hover {
     /* ---------- Contact Form ---------- */
 
     input,
+    select,
     textarea {
         font-size: 16px;
     }
