@@ -18,6 +18,7 @@ const websiteError = document.querySelector("#website-error");
 const clearButton = document.querySelector("#clear-button");
 
 const successMessage = document.querySelector("#success-message");
+let successTimer;
 
 function validateFullName() {
 
@@ -26,6 +27,7 @@ function validateFullName() {
 
         fullName.classList.add("input-error");
         fullName.classList.remove("input-valid");
+        fullName.setAttribute("aria-invalid", "true");
 
         return false;
     }
@@ -34,6 +36,7 @@ function validateFullName() {
 
         fullName.classList.add("input-error");
         fullName.classList.remove("input-valid");
+        fullName.setAttribute("aria-invalid", "true");
 
         return false;
     }
@@ -42,6 +45,7 @@ function validateFullName() {
 
         fullName.classList.add("input-valid");
         fullName.classList.remove("input-error");
+        fullName.setAttribute("aria-invalid", "false");
 
         return true;
     }
@@ -54,6 +58,7 @@ function validateEmail() {
 
         email.classList.add("input-error");
         email.classList.remove("input-valid");
+        email.setAttribute("aria-invalid", "true");
 
         return false;
     }
@@ -62,6 +67,7 @@ function validateEmail() {
 
         email.classList.add("input-error");
         email.classList.remove("input-valid");
+        email.setAttribute("aria-invalid", "true");
 
         return false;
     }
@@ -70,6 +76,7 @@ function validateEmail() {
 
         email.classList.add("input-valid");
         email.classList.remove("input-error");
+        email.setAttribute("aria-invalid", "false");
 
         return true;
     }
@@ -83,6 +90,7 @@ function validateTopic() {
 
         topic.classList.add("input-error");
         topic.classList.remove("input-valid");
+        topic.setAttribute("aria-invalid", "true");
 
         return false;
     }
@@ -91,6 +99,7 @@ function validateTopic() {
 
         topic.classList.add("input-valid");
         topic.classList.remove("input-error");
+        topic.setAttribute("aria-invalid", "false");
 
         return true;
     }
@@ -104,6 +113,7 @@ function validateComments() {
 
         comments.classList.add("input-error");
         comments.classList.remove("input-valid");
+        comments.setAttribute("aria-invalid", "true");
 
         return false;
     }
@@ -112,6 +122,7 @@ function validateComments() {
 
         comments.classList.add("input-error");
         comments.classList.remove("input-valid");
+        comments.setAttribute("aria-invalid", "true");
 
         return false;
     }
@@ -120,6 +131,7 @@ function validateComments() {
 
         comments.classList.add("input-valid");
         comments.classList.remove("input-error");
+        comments.setAttribute("aria-invalid", "false");
 
         return true;
     }
@@ -134,6 +146,7 @@ function validateWebsite() {
 
         website.classList.remove("input-error");
         website.classList.remove("input-valid");
+        website.removeAttribute("aria-invalid");
 
         return true;
     }
@@ -142,6 +155,7 @@ function validateWebsite() {
 
         website.classList.add("input-error");
         website.classList.remove("input-valid");
+        website.setAttribute("aria-invalid", "true");
 
         return false;
     }
@@ -150,6 +164,7 @@ function validateWebsite() {
 
         website.classList.add("input-valid");
         website.classList.remove("input-error");
+        website.setAttribute("aria-invalid", "false");
 
         return true;
     }
@@ -162,6 +177,7 @@ form.addEventListener("submit", function (event) {
 
     let formIsValid = true;
 
+    clearTimeout(successTimer);
     successMessage.textContent = "";
 
     //Fullname validation
@@ -198,7 +214,7 @@ form.addEventListener("submit", function (event) {
         successMessage.textContent =
         "Thanks for your feedback, " + fullName.value.trim() + "!";
         
-        setTimeout(function () {
+        successTimer = setTimeout(function () {
             successMessage.textContent = "";
         }, 4000);
         
@@ -209,6 +225,12 @@ form.addEventListener("submit", function (event) {
         topic.classList.remove("input-valid");
         comments.classList.remove("input-valid");
         website.classList.remove("input-valid");
+
+        fullName.removeAttribute("aria-invalid");
+        email.removeAttribute("aria-invalid");
+        topic.removeAttribute("aria-invalid");
+        comments.removeAttribute("aria-invalid");
+        website.removeAttribute("aria-invalid");
 
         characterCounter.textContent =
             "0 characters - minimum 15 required";
@@ -239,6 +261,7 @@ comments.addEventListener("input", function () {
 
 clearButton.addEventListener("click", function () {
 
+    clearTimeout(successTimer);
     form.reset();
 
     fullNameError.textContent = "";
@@ -262,6 +285,13 @@ clearButton.addEventListener("click", function () {
 
     website.classList.remove("input-error");
     website.classList.remove("input-valid");
+
+    // Reset accessibility state
+    fullName.removeAttribute("aria-invalid");
+    email.removeAttribute("aria-invalid");
+    topic.removeAttribute("aria-invalid");
+    comments.removeAttribute("aria-invalid");
+    website.removeAttribute("aria-invalid");
 
     characterCounter.textContent =
         "0 characters - minimum 15 required";
