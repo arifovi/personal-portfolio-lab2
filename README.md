@@ -7,7 +7,7 @@ Syed Arif Rahman
 Grade 3
 
 ## Project Description
-This project extends my Lab 1 personal portfolio by adding an interactive feedback form using JavaScript. The website is built with HTML, CSS and JavaScript.
+This project extends my Lab 1 personal portfolio by adding an interactive feedback form using JavaScript. The website is built with HTML, CSS and Vanilla JavaScript.
 
 ## Implemented Features
 - Interactive feedback form with Full Name, Email, Topic of Interest, Comments and optional Website fields.
@@ -30,7 +30,10 @@ This project extends my Lab 1 personal portfolio by adding an interactive feedba
 ## Technologies Used
 - HTML5
 - CSS3
-- JavaScript
+- Vanilla JavaScript
 
 ## Notes
 The feedback form runs entirely in the browser. It does not send emails or store submitted feedback on a server.
+
+## CSS Organization
+The portfolio uses a shared `style.css` file for both the homepage and the feedback page. The feedback form's validation states, focus styles, transitions, and responsive rules are included in this stylesheet to maintain a consistent design across the website.
