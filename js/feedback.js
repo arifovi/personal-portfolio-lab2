@@ -126,6 +126,17 @@ function validateComments() {
 
         return false;
     }
+
+    else if (comments.value.trim().length > 40) {
+        commentsError.textContent = "Comments must be less than 40 characters.";
+
+        comments.classList.add("input-error");
+        comments.classList.remove("input-valid");
+        comments.setAttribute("aria-invalid", "true");
+
+        return false;
+    }
+
     else {
         commentsError.textContent = "";
 
@@ -243,9 +254,16 @@ form.addEventListener("submit", function (event) {
 
 comments.addEventListener("input", function () {
 
-   if (comments.value.length < 15) {
+   if (comments.value.length < 15 ) {
         characterCounter.textContent =
             comments.value.length + " characters - minimum 15 required";
+
+        characterCounter.classList.add("counter-error");
+        characterCounter.classList.remove("counter-valid");
+    }
+    else if (comments.value.length > 40 ) {
+        characterCounter.textContent =
+            comments.value.length + " characters - maximum 40 required";
 
         characterCounter.classList.add("counter-error");
         characterCounter.classList.remove("counter-valid");
